@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -28,10 +29,10 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'App aula 02 - Mobile'),
     );
   }
 }
@@ -65,9 +66,37 @@ class _MyHomePageState extends State<MyHomePage> {
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
       _counter++;
+      
     });
   }
 
+   void _decrementCounter() {
+    setState(() {
+      // This call to setState tells the Flutter framework that something has
+      // changed in this State, which causes it to rerun the build method below
+      // so that the display can reflect the updated values. If we changed
+      // _counter without calling setState(), then the build method would not be
+      // called again, and so nothing would appear to happen.
+      
+      if(_counter<=0){
+        _counter=0;
+      }
+      else{
+        _counter--;
+      }
+    });
+  }
+
+  void _reset() {
+    setState(() {
+      // This call to setState tells the Flutter framework that something has
+      // changed in this State, which causes it to rerun the build method below
+      // so that the display can reflect the updated values. If we changed
+      // _counter without calling setState(), then the build method would not be
+      // called again, and so nothing would appear to happen.
+      _counter=0;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -103,23 +132,56 @@ class _MyHomePageState extends State<MyHomePage> {
           // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
           // action in the IDE, or press "p" in the console), to see the
           // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
+          // mainAxisAligment posicionamento no centro
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
+            // style seleciona o tipo da fonte, tamanho
+            Text('SENAI',style: TextStyle(fontSize: 20,
+            fontWeight: FontWeight.w800),),
             const Text(
               'You have pushed the button this many times:',
             ),
-            Text(
+            Container(
+           width: 50,
+           height: 50,
+           color: Colors.blue,
+           child: Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+              style: TextStyle(color: Colors.white,fontSize: 30),
+              
+              textAlign: TextAlign.center,
+
             ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                
+                ElevatedButton(onPressed: _incrementCounter, child: Icon(Icons.add)),
+                ElevatedButton(onPressed: _decrementCounter, child: Icon(Icons.remove)),
+                 ElevatedButton(onPressed: _reset , child: Text('Reset')),
+              ],
+            ),
+            Container(
+           width: 200,
+           height: 50,
+           color: Colors.blue,
+           child: Text(
+              'Mobile',
+              style: TextStyle(color: Colors.white,fontSize: 30),
+              
+              textAlign: TextAlign.center,
+
+            ),
+            ),
+           
+           
+           
+            
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+
     );
   }
 }
