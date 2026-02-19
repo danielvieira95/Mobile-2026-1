@@ -12,4 +12,10 @@ void main(){
   print("Nota 1: $n1 ");
   print("Nota 2: $n2 ");
   print("Media: $res ");
+  if(res>=6){
+    print("Parabéns ! Aprovado");
+  }
+  else{
+    print("Reprovado");
+  }
 }
