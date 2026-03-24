@@ -54,6 +54,9 @@ class _ChatScreenState extends State<ChatScreen> {
       });
       _controller.clear();
     });
+  }
+
+  
 
     // Função para limpar as mensagens
     void _limparMensagens(){
@@ -62,7 +65,8 @@ class _ChatScreenState extends State<ChatScreen> {
       });
 
     }
-  }
+  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,11 +89,67 @@ class _ChatScreenState extends State<ChatScreen> {
               itemCount: _messages.length,
               itemBuilder: (context,index){
                 final msg = _messages[index];
-                return 
-              }))
+                return  MessageBuble(
+                  text: msg['text'], isMe: msg['isMe'], time: msg['time']);
+              })
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 8,vertical: 4
+                ),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: TextField(
+                        controller: _controller,
+                        decoration: InputDecoration(
+                          hintText: 'Digite sua mensagem',
+                          border: InputBorder.none
+                        ),
+                        
+                      ),
+                      
+                      ),
+                      IconButton(onPressed: _sendMessage, icon: Icon(Icons.send,color: Colors.teal,)),
+                      IconButton(onPressed: _limparMensagens, icon: Icon(Icons.clear,color: Colors.teal,)),
+                  ],
+                ),
+                )
         ],
       ),
-    )
+    );
   }
 }
 
+
+
+class MessageBuble extends StatelessWidget{
+  // cria variaveis e construtor 
+
+  final String text;
+  final bool isMe;
+  final String time;
+  const MessageBuble({super.key, required this.text, required this.isMe, required this.time});
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Align(
+      alignment: isMe? Alignment.centerRight:Alignment.center,
+      child: Column(
+        children: [
+          Container(
+            margin: EdgeInsets.symmetric(vertical: 5),
+            padding: EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: isMe?Colors.green[100]:Colors.grey[300],
+              borderRadius: BorderRadius.circular(12)
+            ),
+            child: Text(text),
+          ),
+          Text(time,style: TextStyle(fontSize: 10,color: Colors.grey),)
+        ],
+      ),
+    );
+  }
+}
