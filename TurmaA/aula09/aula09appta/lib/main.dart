@@ -1,3 +1,5 @@
+import 'package:aula09appta/tela02.dart';
+import 'package:aula09appta/tela03.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -72,9 +74,13 @@ class DashboardScreen extends StatelessWidget {
         ),
 
         SizedBox(height: 30,),
-        _DashboardButton(icon: Icons.analytics, label: 'Monitoramento', onTap: (){}),
+        _DashboardButton(icon: Icons.analytics, label: 'Monitoramento', onTap: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>ColetaDadosScreen()));
+        }),
         SizedBox(height: 10,),
-        _DashboardButton(icon: Icons.settings_remote_outlined, label: 'Acionamento', onTap: (){}),
+        _DashboardButton(icon: Icons.settings_remote_outlined, label: 'Acionamento', onTap: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>Telaacionamento()));
+        }),
 
         SizedBox(height: 10,),
         _DashboardButton(icon: Icons.smart_toy_outlined, label: 'Chatbot', onTap: (){})
