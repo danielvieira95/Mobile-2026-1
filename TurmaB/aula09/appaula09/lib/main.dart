@@ -42,8 +42,11 @@ class DashboardScreen extends StatelessWidget {
         title: Row(
           children: [
             Image.asset('images/senai.png',height: 40,),
-            Text('App Agro IoT',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w800,
-            color: Colors.white),),
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Text('App Agro IoT',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w800,
+              color: Colors.white),),
+            ),
 
             // Spacer
             Spacer(),
