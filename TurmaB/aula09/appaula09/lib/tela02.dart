@@ -66,7 +66,8 @@ class _ColetaDadosScreenState extends State<ColetaDadosScreen> {
         elevation: 0,
         leading: IconButton(onPressed: ()=>Navigator.pop(context), 
         icon: Icon(Icons.arrow_back,color: Colors.brown,)),
-        title: Text('Monitoramento'),
+        title: Text('Monitoramento',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+        centerTitle: true,
       ),
       //  corpo do Scaffold
 
@@ -108,30 +109,31 @@ class SensorCard extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(sensor.title,
                   style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
-                  
-                ],
-              ),
-            ),
-      
-            SizedBox(height: 8,),
-      
+                  SizedBox(height: 8,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(sensor.value,style: TextStyle(fontWeight: FontWeight.w500,fontSize: 16),),
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 12,vertical: 6),
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(12)),
-                child: Text(sensor.status,style: TextStyle(color: sensor.statusColor,
-                fontWeight:FontWeight.bold ),),)
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 6),
+                  child: Container(                 
+                  child: Text(sensor.status,style: TextStyle(color: sensor.statusColor,
+                  fontWeight:FontWeight.bold ),),),
+                )
               ],
       
             )
             
+                ],
+              ),
+            ),
+      
+            
+             
           ],
         ),
       ),

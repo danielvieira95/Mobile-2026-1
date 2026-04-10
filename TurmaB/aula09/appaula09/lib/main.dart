@@ -1,5 +1,6 @@
 // importa a biblioteca que permite criar os widgets
 import 'package:appaula09/tela02.dart';
+import 'package:appaula09/tela03.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -79,7 +80,9 @@ class DashboardScreen extends StatelessWidget {
             Navigator.push(context, MaterialPageRoute(builder: (context)=>ColetaDadosScreen()));
           }),
           SizedBox(height: 10,),
-          _DashboardButton(icon: Icons.settings_remote_outlined, label: 'Acionamento', onTap: (){}),
+          _DashboardButton(icon: Icons.settings_remote_outlined, label: 'Acionamento', onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>Telaacionamento()));
+          }),
           
           SizedBox(height: 10,),
           _DashboardButton(icon: Icons.smart_toy_outlined, label: 'Chatbot', onTap: (){})
