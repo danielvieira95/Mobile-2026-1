@@ -38,7 +38,7 @@ class _CadastroprodutosState extends State<Cadastroprodutos> {
       context: context,
        builder: (BuildContext){
         return AlertDialog(
-          content: Text('Produto ${nomeprod.text} cadastrado !'),
+          content: Text("Produto ${nomeprod.text} cadastrado !"),
           actions: [
             TextButton(
               onPressed: (){
@@ -48,6 +48,7 @@ class _CadastroprodutosState extends State<Cadastroprodutos> {
         );
 
        });
+    
 
   }
 
@@ -61,7 +62,7 @@ class _CadastroprodutosState extends State<Cadastroprodutos> {
     showDialog(context: context, 
     builder: (BuilderContext){
       return AlertDialog(
-        content: Text('Produto ${nomeprod.text} deletado !'),
+        content: Text("Produto ${nomeprod.text} deletado !"),
         actions: [
           TextButton(
             onPressed: (){
@@ -82,7 +83,7 @@ class _CadastroprodutosState extends State<Cadastroprodutos> {
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: TextField(
+            child: TextFormField(
               keyboardType: TextInputType.name,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
@@ -96,7 +97,7 @@ class _CadastroprodutosState extends State<Cadastroprodutos> {
 
            Padding(
             padding: const EdgeInsets.all(8.0),
-            child: TextField(
+            child: TextFormField(
               keyboardType: TextInputType.name,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
@@ -111,7 +112,7 @@ class _CadastroprodutosState extends State<Cadastroprodutos> {
 
            Padding(
             padding: const EdgeInsets.all(8.0),
-            child: TextField(
+            child: TextFormField(
               keyboardType: TextInputType.name,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
@@ -125,7 +126,7 @@ class _CadastroprodutosState extends State<Cadastroprodutos> {
 
           ElevatedButton(onPressed: _cadastrarproduto, child: Text('Cadastrar produto')),
           ElevatedButton(onPressed: _deletarproduto, child: Text('Deletar produto')),
-          
+
         ],
         
         

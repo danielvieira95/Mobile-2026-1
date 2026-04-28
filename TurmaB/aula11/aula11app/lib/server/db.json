@@ -17,6 +17,30 @@
       "nome": "Nintendo Switch 2",
       "valor": "4500",
       "qtde": "3"
+    },
+    {
+      "id": "8jiSO5d8ArE",
+      "nome": "Xbox Series X",
+      "valor": "3500",
+      "qtde": "4"
+    },
+    {
+      "id": "YqLts0zs3wM",
+      "nome": "teste",
+      "valor": "teste",
+      "qtde": "2"
+    },
+    {
+      "id": "VuTrwVF5FPM",
+      "nome": "tester",
+      "valor": "tester",
+      "qtde": "4"
+    },
+    {
+      "id": "KKYOYPzjumE",
+      "nome": "rtr",
+      "valor": "45",
+      "qtde": "2"
     }
   ],
   "usuarios": [
