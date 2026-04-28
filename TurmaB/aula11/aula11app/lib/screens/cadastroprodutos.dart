@@ -1,3 +1,4 @@
+import 'package:aula11app/screens/prodscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -13,9 +14,11 @@ class _CadastroprodutosState extends State<Cadastroprodutos> {
   TextEditingController nomeprod = TextEditingController();
   TextEditingController valorprod = TextEditingController();
   TextEditingController qtde = TextEditingController();
-
+  
+   
   _cadastrarproduto()async{
     String url = "http://10.109.83.10:3000/produtos";
+    
     // Cria estrutura de mensagem para cadastro dos produtos
     Map<String,dynamic>prod={
       "id":nomeprod.text,
@@ -23,16 +26,14 @@ class _CadastroprodutosState extends State<Cadastroprodutos> {
       "valor":valorprod.text,
       "qtde":qtde.text
     };
-
+    String nomeproduto = nomeprod.text;
     await http.post(Uri.parse(url),
     headers: <String,String>{
       'Content-type':'application/json; charset=UTF-8'
     },
     body: jsonEncode(prod)
     );
-    nomeprod.text="";
-    valorprod.text="";
-    qtde.text="";
+    
 
     showDialog(
       context: context,
@@ -42,13 +43,16 @@ class _CadastroprodutosState extends State<Cadastroprodutos> {
           actions: [
             TextButton(
               onPressed: (){
+                nomeprod.text="";
+                valorprod.text="";
+                qtde.text="";
                 Navigator.pop(context);
               }, child: Text('Fechar'))
           ],
         );
 
        });
-    
+     
 
   }
 
@@ -126,6 +130,11 @@ class _CadastroprodutosState extends State<Cadastroprodutos> {
 
           ElevatedButton(onPressed: _cadastrarproduto, child: Text('Cadastrar produto')),
           ElevatedButton(onPressed: _deletarproduto, child: Text('Deletar produto')),
+          ElevatedButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(
+              builder: (context)=>ProdutoScreen()));
+
+          }, child: Text('Produtos')),
 
         ],
         

@@ -41,6 +41,42 @@
       "nome": "rtr",
       "valor": "45",
       "qtde": "2"
+    },
+    {
+      "id": "xWSALDMqIZA",
+      "nome": "ty",
+      "valor": "5",
+      "qtde": "3"
+    },
+    {
+      "id": "gsuGKC3_o_0",
+      "nome": "tdtd",
+      "valor": "5",
+      "qtde": "5"
+    },
+    {
+      "id": "ZY2xnnqdsRs",
+      "nome": "ty",
+      "valor": "4",
+      "qtde": "6"
+    },
+    {
+      "id": "3P8uF7GaLqU",
+      "nome": "tyt",
+      "valor": "4",
+      "qtde": "6"
+    },
+    {
+      "id": "0XbQTLDTh1A",
+      "nome": "",
+      "valor": "",
+      "qtde": ""
+    },
+    {
+      "id": "l7FZBP7tiGg",
+      "nome": "try",
+      "valor": "6",
+      "qtde": "t"
     }
   ],
   "usuarios": [
@@ -53,6 +89,11 @@
       "id": "0002",
       "login": "senai",
       "senha": "2026"
+    },
+    {
+      "id": "waC_MKe01kU",
+      "login": "mobile26",
+      "senha": "senai"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
