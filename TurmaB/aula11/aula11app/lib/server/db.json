@@ -1,0 +1,35 @@
+{
+  "produtos": [
+    {
+      "id": "0",
+      "nome": "Chocolate",
+      "valor": "5.50",
+      "qtde": "3"
+    },
+    {
+      "id": "1",
+      "nome": "Shampoo",
+      "valor": "20.50",
+      "qtde": "7"
+    },
+    {
+      "id": "MI-K2Ce_2xQ",
+      "nome": "Nintendo Switch 2",
+      "valor": "4500",
+      "qtde": "3"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": "0001",
+      "login": "daniel",
+      "senha": "2026"
+    },
+    {
+      "id": "0002",
+      "login": "senai",
+      "senha": "2026"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
