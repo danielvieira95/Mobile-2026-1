@@ -1,8 +1,14 @@
 import 'package:aula09appta/tela02.dart';
 import 'package:aula09appta/tela03.dart';
+import 'package:aula09appta/tela04.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() {
+void main() async{
+  // inicia o app sem ficar esperando carregar a variavel do .env
+  WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: ".env");
+
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     home:  DashboardScreen(),
@@ -83,7 +89,9 @@ class DashboardScreen extends StatelessWidget {
         }),
 
         SizedBox(height: 10,),
-        _DashboardButton(icon: Icons.smart_toy_outlined, label: 'Chatbot', onTap: (){})
+        _DashboardButton(icon: Icons.smart_toy_outlined, label: 'Chatbot', onTap: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>ChatScreen()));
+        })
 
       ],
     ),
